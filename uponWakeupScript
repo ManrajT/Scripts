@@ -2,5 +2,5 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 osascript $DIR/hideAllWindows.scpt; 
 osascript $DIR/minimizeSafari.scpt;
-sleep 5;
+sleep 2;
 open -a Terminal; 

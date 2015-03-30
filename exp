@@ -1,0 +1,3 @@
+#!/bin/bash
+gq=$(sed 's/ /+/g' <<< "$*")
+open -g /Applications/Safari.app "http://www.explainshell.com/explain?cmd=$*"
