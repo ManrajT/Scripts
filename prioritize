@@ -1,0 +1,28 @@
+#!/bin/bash
+
+sudo ifconfig en0 down;
+printf "\n...Internet disabled\n\n";
+
+printf "Open habits? y/n: ";
+read response;
+
+lowerCaseResponse=`echo $response | tr [:upper:] [:lower:]`;
+if [[ $lowerCaseResponse == "y"  ]] || [[ $lowerCaseResponse == "yes" ]]; then 
+  open -a Habits;
+fi
+
+
+numberOfTasks=5;
+printf "\nList $numberOfTasks different things that you could do right now:\n";
+
+for i in `seq 1 $numberOfTasks`;
+do
+  printf "$i:  ";
+  read task[$i];
+done;
+
+printf "\nWhat is the best course of action? (1 line)\n";
+read bestCourseOfAction; 
+
+sudo ifconfig en0 up;
+printf "\n...Internet re-enabled\n\n";

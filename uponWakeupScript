@@ -1,6 +1,6 @@
 #!/bin/bash
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-osascript $DIR/hideAllWindows.scpt; 
-osascript $DIR/minimizeSafari.scpt;
+SCRIPTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+osascript $SCRIPTDIR/hideAllWindows.scpt; 
+osascript $SCRIPTDIR/minimizeSafari.scpt;
 sleep 2;
-open -a Terminal; 
+open -a Terminal $SCRIPTDIR/prioritize; 
